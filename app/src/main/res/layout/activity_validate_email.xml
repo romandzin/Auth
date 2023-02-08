@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ValidateEmailActivity">
+
+    <ImageView
+        android:id="@+id/emailIcon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_email"
+        android:layout_marginTop="160dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/confirmEmailText"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/confirmEmailText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/century_gothic_new_bold"
+        android:text="Подтвердите email для защиты вашего профиля"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/confirmCodeInput"
+        app:layout_constraintStart_toStartOf="@id/confirmCodeInput"
+        app:layout_constraintTop_toBottomOf="@id/emailIcon"
+        app:layout_constraintBottom_toTopOf="@id/mainText1"/>
+
+    <TextView
+        android:id="@+id/mainText1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="@font/nunito"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:text="На вашу почту было отправлено письмо с кодом подтверждения."
+        app:layout_constraintEnd_toEndOf="@id/confirmCodeInput"
+        app:layout_constraintStart_toStartOf="@id/confirmCodeInput"
+        app:layout_constraintTop_toBottomOf="@id/confirmEmailText" />
+
+    <TextView
+        android:id="@+id/mainText2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="@font/nunito"
+        android:textSize="16sp"
+        android:text="Введите код ниже, чтобы подтвердить электронную почту"
+        app:layout_constraintEnd_toEndOf="@id/confirmCodeInput"
+        app:layout_constraintStart_toStartOf="@id/confirmCodeInput"
+        app:layout_constraintTop_toBottomOf="@id/mainText1" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmCodeInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toTopOf="@id/confirmButton"
+        app:layout_constraintTop_toBottomOf="@id/mainText2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/confirmCodeField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Код подтверждения"
+            android:fontFamily="@font/nunito"
+            android:background="@color/white"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/confirmButton"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:text="Подтвердить"
+        android:fontFamily="@font/century_gothic_new_bold"
+        android:backgroundTint="@color/text_blue"
+        android:textAllCaps="false"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/confirmCodeInput"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
